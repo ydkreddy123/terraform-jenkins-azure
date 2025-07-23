@@ -6,19 +6,20 @@ pipeline {
                 git branch: 'main' , url: 'https://github.com/ydkreddy123/terraform-jenkins-azure.git'
             }
         }
-    stage ('terraform init'){
-        stage {
+        stage ('terraform init') {
+        steps {
             sh 'terraform init'
+            }
         }
-    }
-    stage ('terraform plan'){
-        stage {
+        stage ('terraform plan'){
+        steps {
             sh 'terraform plan'
+            } 
         }
-    }
-    stage ('terraform apply'){
-        stage {
+        stage ('terraform apply'){
+        steps {
             sh 'terraform apply -auto-approve'
+            }
         }
     }
 }
